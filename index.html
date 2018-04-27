@@ -1,0 +1,176 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Free Web tutorials">
+    <meta name="keywords" content="HTML,CSS,XML,JavaScript">
+    <meta name="author" content="John Doe">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRbTAcLvLmH5bkQna7H4SKUs4yn27wqvXhuTfmQ-QE894XgbpDGgQ" type="image/gif" sizes="16x16">
+    <!-- Bootstrap Lib -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  
+<style>
+    h1 {
+        padding-top: 10px; 
+        padding-left: 10px;
+        font-family: Cambria;
+        text-align: center;
+    }
+    h2 {
+        font-family: Cambria;
+    }
+
+    label {
+        padding-right: 5px;
+    }
+    div {
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+
+    #result1, #result2, #result3{
+        padding-bottom: 50px;
+    }
+
+    hr.style5 {
+	    background-color: #fff;
+	    border-top: 2px dashed #8c8b8b;
+    }
+    </style>
+    <script data-main="scripts/app" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.5/require.min.js"></script>
+    
+</head>
+<body>
+        <h1>TypeScript Assessment 2</h1>
+    <br>
+        <hr class="style5">
+    <br>
+
+    <div class="container">
+        <ul class="nav nav-tabs" role="tablist">
+            <li class="nav-item">
+              <a class="nav-link active" data-toggle="tab" href="#problem1">Problem 1</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" data-toggle="tab" href="#problem2">Problem 2</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" data-toggle="tab" href="#problem3">Problem 3</a>
+            </li>
+          </ul>
+        
+          <!-- Tab panes -->
+          <div class="tab-content">
+            <div id="problem1" class="container tab-pane active"><br>
+                <h2>Problem 1:</h2>
+                <blockquote class="blockquote">
+                <p>Create a class Book which has following members:<br>
+                <ul>
+                    <li>private int bookNo</li>
+                    <li>private String title</li>
+                    <li>private String author</li>
+                    <li>private float price</li>
+                </ul>
+                Provide setter and getter methods for all instance variables.<br>
+                Create an object of <b>Book</b> class initilize the object by reading inputs for 
+                the fields from the user.
+                </p>
+                </blockquote>
+                <form class="form" onsubmit="problem1(); return false;">
+                    <label for="number">Book Number :</label>
+                    <input type="number"  pattern="([0-9]{5}" class="form-control" style="width: 30%" id="p1bookNo" placeholder="Enter a book number" name="bookNo">
+                    <label for="title">Title :</label>
+                    <input type="text" class="form-control" style="width: 30%" id="p1title" placeholder="Enter a title" name="title">
+                    <label for="author">Author :</label>
+                    <input type="text" class="form-control" style="width: 30%" id="p1author" placeholder="Enter an author name" name="author">
+                    <label for="number">Price :</label>
+                    <input type="number" class="form-control" style="width: 30%" id="p1price" placeholder="Enter price" name="price" min=0 value="0" step=".01">
+                    <div></div>
+                    <br>
+                    <button type="submit" class="btn btn-primary" >Submit</button>
+                </form>
+                <div id="result1"></div> 
+            </div>
+
+            <div id="problem2" class="container tab-pane fade"><br>
+                <h2>Problem 2:</h2>
+                <blockquote class="blockquote">
+                <p>Modify the Book class to include a consturctor for initilizing the instance variables.</p>
+                </blockquote>
+                <form class="form" onsubmit="problem2(); return false;">
+                    <label for="number">Book Number :</label>
+                    <input type="number"  pattern="([0-9]{5}" class="form-control" style="width: 30%" id="p2bookNo" placeholder="Enter a book number" name="bookNo">
+                    <label for="title">Title :</label>
+                    <input type="text" class="form-control" style="width: 30%" id="p2title" placeholder="Enter a title" name="title">
+                    <label for="author">Author :</label>
+                    <input type="text" class="form-control" style="width: 30%" id="p2author" placeholder="Enter an author name" name="author">
+                    <label for="number">Price :</label>
+                    <input type="number" class="form-control" style="width: 30%" id="p2price" placeholder="Enter price" name="price" min=0 value="0" step=".01">
+                    <div></div>
+                    <br>
+                    <button type="submit" class="btn btn-primary" >Submit</button>
+                </form>
+                <div id="result2"></div> 
+            </div>
+
+            <div id="problem3" class="container tab-pane fade"><br>
+                <h2>Problem 3:</h2>
+                <blockquote class="blockquote">
+                <p>Extends the Book class to create a EngineeringBook drived from <b>Book</b> with additional attribute.<br>
+                <ul>
+                    <li>private String category</li>
+                </ul>
+                <br>
+                Provide setter getter methods for type instance variable<br>
+                Create an object of <b>EngineeringBoo</b> class and test it. 
+                </p>
+                </blockquote>
+                <form class="form" onsubmit="problem3(); return false;">
+                    <label for="number">Book Number :</label>
+                    <input type="number"  pattern="([0-9]{5}" class="form-control" style="width: 30%" id="p3bookNo" placeholder="Enter a book number" name="bookNo">
+                    <label for="title">Title :</label>
+                    <input type="text" class="form-control" style="width: 30%" id="p3title" placeholder="Enter a title" name="title">
+                    <label for="author">Author :</label>
+                    <input type="text" class="form-control" style="width: 30%" id="p3author" placeholder="Enter an author name" name="author">
+                    <label for="number">Price :</label>
+                    <input type="number" class="form-control" style="width: 30%" id="p3price" placeholder="Enter price" name="price" min=0 value="0" step=".01">
+                    <label for="category">Category :</label>
+                    <input type="text" class="form-control" style="width: 30%" id="p3category" placeholder="Enter Category" name="category">
+                    <div></div>
+                    <br>
+                    <button type="submit" class="btn btn-primary" >Submit</button>
+                </form>
+                <div id="result3"></div> 
+            </div>
+          </div>
+        </div>
+    </div>
+
+<script>
+
+var problem1 = function () {
+    require(['app'], function (app) {
+        var appModule = app.AppModule.BootstrapApplication;
+        new appModule().executeSolution1();
+    });
+};
+var problem2 = function () {
+    require(['app'], function (app) {
+        var appModule = app.AppModule.BootstrapApplication;
+        new appModule().executeSolution2();
+    });
+};
+var problem3 = function () {
+    require(['app'], function (app) {
+        var appModule = app.AppModule.BootstrapApplication;
+        new appModule().executeSolution3();
+    });
+};
+
+</script>
+</body>
+</html>
